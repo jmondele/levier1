@@ -21,7 +21,7 @@ const Index = () => {
         description="Three oils for all your cooking, baking, frying, and dressing."
         image={productTrio}
         imageAlt="The Trio - Three olive oil squeeze bottles"
-        ctaText="Shop The Trio"
+        ctaText="Shop The Trios"
         bgColor="light"
       />
 
