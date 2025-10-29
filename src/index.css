@@ -1,0 +1,170 @@
+/* Galliso Font */
+@font-face {
+  font-family: 'Galliso';
+  src: url('/fonts/Galliso.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Galliso';
+  src: url('/fonts/Galliso Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Brand Colors - Olive Oil Theme */
+    --background: 32 31% 82%;
+    --foreground: 0 0% 9%;
+
+    --card: 32 31% 82%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 32 31% 82%;
+    --popover-foreground: 0 0% 9%;
+
+    /* Primary: Vibrant Orange (#F57200) */
+    --primary: 28 100% 48%;
+    --primary-foreground: 0 0% 9%;
+
+    /* Secondary: Rich Black (#161616) */
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 32 31% 82%;
+
+    /* Muted: Soft Cream */
+    --muted: 42 25% 90%;
+    --muted-foreground: 220 15% 40%;
+
+    /* Accent: Golden Yellow CTA */
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 32 31% 82%;
+
+    --border: 42 20% 85%;
+    --input: 42 20% 85%;
+    --ring: 28 100% 48%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 32 31% 82%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 32 31% 82%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 40% 8%;
+    --foreground: 32 31% 82%;
+
+    --card: 220 35% 12%;
+    --card-foreground: 32 31% 82%;
+
+    --popover: 220 35% 12%;
+    --popover-foreground: 32 31% 82%;
+
+    --primary: 28 100% 48%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 220 30% 18%;
+    --secondary-foreground: 32 31% 82%;
+
+    --muted: 220 30% 18%;
+    --muted-foreground: 42 20% 65%;
+
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 32 31% 82%;
+
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 28 100% 48%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 32 31% 82%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 32 31% 82%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 32 31% 82%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Galliso', serif;
+  }
+
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Marquee Animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  /* Smooth Hover Lift */
+  .hover-lift {
+    @apply transition-transform duration-300 ease-out hover:-translate-y-1;
+  }
+
+  /* Hero Button Variant */
+  .btn-hero {
+    @apply font-serif bg-accent text-accent-foreground px-8 py-4 rounded-full font-semibold text-lg hover:bg-accent/90 transition-all duration-300 hover:shadow-lg;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+}
