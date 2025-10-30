@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 
 interface ProductSectionProps {
   eyebrow?: string;
@@ -33,6 +32,8 @@ const ProductSection = ({
               <img
                 src={image}
                 alt={imageAlt}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
             </div>

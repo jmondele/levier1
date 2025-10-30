@@ -2,13 +2,16 @@ const Hero = () => {
   return (
     <section className="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden bg-secondary">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: 'url(/2T5A8620.JPEG)',
-          filter: 'brightness(0.7)'
-        }}
-      />
+      <div className="absolute inset-0">
+        <img
+          src="/2T5A8620.JPEG"
+          alt="Hero background"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="w-full h-full object-cover brightness-[0.7]"
+        />
+      </div>
 
       {/* Content Overlay */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
